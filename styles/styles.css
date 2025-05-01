@@ -1,0 +1,279 @@
+/* Color Variables */
+
+:root {
+    --background-color: #E5EAFA;
+    --background-color-dark: #111111;
+
+    --brand-burgundy: #800020;
+    --brand-burgundy-light: #A0002D;
+
+    --red-primary: #FF3B3B;
+    --red-secondary: #FF5C5C;
+
+    --aqua-primary: #78FECF;
+    --aqua-secondary: #9AFEDB;
+}
+
+/* Gradients */
+
+.gradient-red {
+    background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
+}
+
+.gradient-red-font {
+    background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-aqua {
+    background: linear-gradient(0deg, var(--aqua-primary), var(--aqua-secondary));
+}
+
+.gradient-aqua-font {
+    background: linear-gradient(90deg, var(--aqua-primary), var(--aqua-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gradient-brand {
+    background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
+}
+
+.gradient-brand-font {
+    background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Reset + Base */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--background-color-dark);
+    font-family: "Roboto", sans-serif;
+}
+
+/* Nav Bar */
+
+nav {
+    width: 100%;
+    padding: 20px 40px;
+    background-color: var(--background-color-dark);
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space Between Logo And Links */
+}
+
+.logo-container {
+    flex: 0 0 auto;
+}
+
+.logo {
+    height: 50px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.logo-link {
+    transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+
+.logo-link:hover .logo {
+    transform: scale(1.2);
+}
+
+.logo-link:active .logo {
+    transform: scale(1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Space Between Links */
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--background-color);
+    text-decoration: none;
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    position: relative;
+    transition: text-shadow 0.3s ease, animation 0.3s ease, opacity 0.05s ease;
+}
+
+.nav-links a:hover {
+    text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
+    animation: glitch 0.5s infinite;
+}
+
+.nav-links a:active {
+    opacity: 0.5;
+}
+
+/* Line Under Nav Bar Links */
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--background-color);
+    box-shadow: 0 0 5px var(--background-color);
+    transition: width 0.3s ease;
+}
+
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Header */
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    color: var(--background-color);
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    font-family: "Anton", sans-serif;
+    background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
+    color: var(--background-color);
+    border-radius: 1px;
+    font-size: 50px;
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+    max-width: 250px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.button:hover {
+    background: var(--background-color);
+    color: var(--background-color-dark);
+    transform: scale(1.05);
+}
+
+.button:hover .glitch-text {
+    animation: glitch 0.5s infinite;
+}
+
+.glitch-text {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.button:active {
+    transform: scale(1);
+}
+
+/* Glitch Animation */
+
+@keyframes glitch {
+    0% {
+        text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
+        transform: translate(0, 0);
+    }
+
+    20% {
+        text-shadow: -2px -1px var(--red-primary), 2px 1px var(--aqua-primary);
+        transform: translate(1px, -1px);
+    }
+
+    40% {
+        text-shadow: 2px 1px var(--red-primary), -2px -1px var(--aqua-primary);
+        transform: translate(-1px, 1px);
+    }
+
+    60% {
+        text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
+        transform: translate(0, 0);
+    }
+
+    80% {
+        text-shadow: -1px 1px var(--red-primary), 1px -1px var(--aqua-primary);
+        transform: translate(1px, 1px);
+    }
+
+    100% {
+        text-shadow: 1px -1px var(--red-primary), -1px 1px var(--aqua-primary);
+        transform: translate(-1px, -1px);
+    }
+}
+
+/* Footer */
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 10px;
+    color: var(--background-color);
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+}
+
+.play-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 100px;
+}
+
+.play-info, .where-to-play {
+    width: 25%;
+}
+
+.play-info h2, .where-to-play h2 {
+    font-size: 50px;
+    font-family: "Anton", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.play-info p, .where-to-play p {
+    font-size: 25px;
+    font-family: "Noto Sans", sans-serif;
+    color: var(--background-color);
+    text-align: center;
+    line-height: 1.5;
+}
