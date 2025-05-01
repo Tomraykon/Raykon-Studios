@@ -160,6 +160,34 @@ h1 {
     margin-top: 20px;
 }
 
+/* Section */
+
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 100px;
+}
+
+.left-text, .right-text {
+    width: 25%;
+}
+
+.left-text h2, .right-text h2 {
+    font-size: 50px;
+    font-family: "Anton", sans-serif;
+    font-weight: 500;
+    text-align: center;
+}
+
+.left-text p, .right-text p {
+    font-size: 25px;
+    font-family: "Noto Sans", sans-serif;
+    color: var(--background-color);
+    text-align: center;
+    line-height: 1.5;
+}
+
 /* Button Styles */
 
 .button-container {
@@ -252,28 +280,3 @@ footer {
     font-size: 15px;
 }
 
-.play-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin: 0 100px;
-}
-
-.play-info, .where-to-play {
-    width: 25%;
-}
-
-.play-info h2, .where-to-play h2 {
-    font-size: 50px;
-    font-family: "Anton", sans-serif;
-    font-weight: 500;
-    text-align: center;
-}
-
-.play-info p, .where-to-play p {
-    font-size: 25px;
-    font-family: "Noto Sans", sans-serif;
-    color: var(--background-color);
-    text-align: center;
-    line-height: 1.5;
-}
