@@ -146,7 +146,7 @@ nav {
 /* Header */
 
 header {
-    max-width: 1500px;
+    max-width: 1700px;
     height: 500px;
     background-color: var(--background-color);
     margin: 0 auto;
@@ -169,13 +169,18 @@ header img {
     gap: 50px;
     flex-wrap: wrap;
     margin-top: 0;
-    max-width: 1500px;
+    max-width: 1700px;
     min-height: 500px;
     height: auto;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     background-color: var(--background-color-dark);
+}
+
+.section-white {
+    align-items:flex-start;
+    background-color: var(--background-color);
 }
 
 .left-text, .right-text {
@@ -190,17 +195,108 @@ header img {
 }
 
 .left-text p, .right-text p {
-    font-size: 1.5em;
+    font-size: 1.7em;
     font-family: "Noto Sans", sans-serif;
     color: var(--background-color);
     text-align: center;
     line-height: 1.5;
 }
 
-.section-container img {
-    max-width: 100%; /* Escala la imagen proporcionalmente */
-    max-height: 100%; /* Asegura que no exceda el contenedor */
-    object-fit: contain; /* Mantiene las proporciones de la imagen */
+/* Raykon News Section */
+
+.raykon-news {
+    width: 85%;
+    margin-top: 50px;
+}
+
+.raykon-news h2 {
+    font-size: 4.5em;
+    font-family: "Anton", sans-serif;
+    font-weight: 500;
+    text-align: left;
+}
+
+/* News Cards */
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.news-card {
+    position: relative;
+    background-color: var(--background-color-dark);
+    border-radius: 2px;
+    padding: 30px;
+    max-width: 400px;
+    color: var(--background-color);
+    border: 4px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.02);
+    border-color: var(--red-primary);
+    background-color: var(--background-color);
+    color: var(--background-color-dark);
+}
+
+.cards a {
+    text-decoration: none;
+}
+
+.news-card h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+.news-card p {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Explore More section */
+
+.white-card {
+    background-color: var(--background-color);
+    color: var(--background-color-dark);
+}
+
+.white-card:hover {
+    background-color: var(--background-color-dark);
+    color: var(--background-color);
+    border-color: var(--aqua-primary);
+}
+
+.explore-more {
+    width: 85%;
+    margin-top: 50px;
+}
+
+.explore-more h2 {
+    font-size: 4.5em;
+    font-family: "Anton", sans-serif;
+    font-weight: 500;
+    color: var(--background-color);
+    text-align: right;
+}
+
+.explore-more h3 {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.9em;
+    margin-bottom: 10px;
+}
+
+.explore-more p {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 20px;
 }
 
 /* Button Styles */
@@ -295,7 +391,7 @@ footer {
     font-size: 15px;
 }
 
-/* Responsive */
+/* Responsive Media Queries */
 
 @media screen and (max-width: 768px) {
 
@@ -305,7 +401,8 @@ footer {
 
     .left-text, .right-text {
         width: 60%;
-        margin-top: 50px;
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 
     .left-text h2, .right-text h2 {
@@ -325,13 +422,10 @@ footer {
         width: 215px;
         margin-bottom: 4em;
     }
+    
 }
 
 @media screen and (max-width: 600px) {
-
-    #coming-soon-banner {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 400px) {
