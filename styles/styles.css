@@ -46,8 +46,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-/* Reset + Base */
-
+/* Global Styles */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -76,7 +75,7 @@ nav {
 .nav-container {
     display: flex;
     align-items: center;
-    gap: 40px; /* Space Between Logo And Links */
+    gap: 40px;
 }
 
 .logo-container {
@@ -93,7 +92,6 @@ nav {
     transition: transform 0.2s ease, fill 0.2s ease;
 }
 
-
 .logo-link:hover .logo {
     transform: scale(1.2);
 }
@@ -104,7 +102,7 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 30px; /* Space Between Links */
+    gap: 30px;
     list-style: none;
 }
 
@@ -141,37 +139,47 @@ nav {
     transition: width 0.3s ease;
 }
 
-
 .nav-links a:hover::after {
     width: 100%;
 }
 
 /* Header */
 
-h1 {
+header {
+    max-width: 1500px;
+    height: 500px;
+    background-color: var(--background-color);
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Anton", sans-serif;
-    font-size: 6em;
-    font-weight: 500;
-    color: var(--background-color);
-    text-align: center;
-    margin-top: 20px;
 }
 
-/* Section */
+header img {
+    max-height: 400px;
+    object-fit: contain;
+}
 
-.text-container {
+/* Section Presentation */
+
+.section-container {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    gap: 50px;
     flex-wrap: wrap;
-    margin-top: 50px;
+    margin-top: 0;
+    max-width: 1500px;
+    min-height: 500px;
+    height: auto;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: var(--background-color-dark);
 }
 
 .left-text, .right-text {
-    width: 25%;
+    width: 40%;
 }
 
 .left-text h2, .right-text h2 {
@@ -189,13 +197,18 @@ h1 {
     line-height: 1.5;
 }
 
+.section-container img {
+    max-width: 100%; /* Escala la imagen proporcionalmente */
+    max-height: 100%; /* Asegura que no exceda el contenedor */
+    object-fit: contain; /* Mantiene las proporciones de la imagen */
+}
+
 /* Button Styles */
 
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 200px;
     overflow: hidden;
 }
 
@@ -241,12 +254,12 @@ h1 {
         text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
         transform: translate(0, 0);
     }
-
+    
     20% {
         text-shadow: -2px -1px var(--red-primary), 2px 1px var(--aqua-primary);
         transform: translate(1px, -1px);
     }
-
+    
     40% {
         text-shadow: 2px 1px var(--red-primary), -2px -1px var(--aqua-primary);
         transform: translate(-1px, 1px);
@@ -282,28 +295,22 @@ footer {
     font-size: 15px;
 }
 
+/* Responsive */
+
 @media screen and (max-width: 768px) {
     .left-text, .right-text {
         width: 60%;
         margin-top: 50px;
     }
 
-    h1 {
-        font-size: 4em;
-    }
-
     .button {
         font-size: 2.5em;
         width: 200px;
+        margin-bottom: 4em;
     }
-    
 }
 
 @media screen and (max-width: 500px) {
-    h1 {
-        font-size: 3em;
-    }
-
     .nav-links a {
         font-size: 1em;
     }
