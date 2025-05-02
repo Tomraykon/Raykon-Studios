@@ -400,7 +400,8 @@ footer {
     }
 
     .left-text, .right-text {
-        width: 60%;
+        width: 70%;
+        max-width: 400px;
         margin-top: 25px;
         margin-bottom: 25px;
     }
