@@ -298,20 +298,58 @@ footer {
 /* Responsive */
 
 @media screen and (max-width: 768px) {
+
+    .nav-links a {
+        font-size: 1em;
+    }
+
     .left-text, .right-text {
         width: 60%;
         margin-top: 50px;
     }
 
-    .button {
+    .left-text h2, .right-text h2 {
         font-size: 2.5em;
-        width: 200px;
+    }
+
+    .left-text p, .right-text p {
+        font-size: 1.2em;
+    }
+
+    header img {
+        max-height: 300px;
+    }
+
+    .button {
+        font-size: 3em;
+        width: 215px;
         margin-bottom: 4em;
     }
 }
 
-@media screen and (max-width: 500px) {
-    .nav-links a {
+@media screen and (max-width: 600px) {
+
+    #coming-soon-banner {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    header img {
+        max-height: 200px;
+    }
+
+    .left-text h2, .right-text h2 {
+        font-size: 2em;
+    }
+
+    .left-text p, .right-text p {
         font-size: 1em;
+    }
+
+    .button {
+        font-size: 2.5em;
+        width: 200px;
     }
 }
