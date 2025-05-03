@@ -434,8 +434,21 @@ footer {
 
 @media screen and (max-width: 768px) {
 
+    nav {
+        padding: 15px 20px;
+        max-height: 70px;
+    }
+
     .nav-links a {
         font-size: 1em;
+    }
+
+    header {
+       margin-top: 70px;
+    }
+
+    .logo {
+        height: 40px;
     }
 
     .left-text, .right-text {
