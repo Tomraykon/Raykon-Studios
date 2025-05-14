@@ -97,11 +97,19 @@
 }
 
 .white-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brand-burgundy-light);
+    clip-path: polygon(20% 0, 80% 0, 100% 0%, 80% 100%, 20% 100%, 0% 0%);
     color: var(--background-color);
     font-size: 5em;
     font-family: "Anton", sans-serif;
     text-align: center;
     font-weight: 500;
+    max-width: 1750px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .debug-buttons-container {
@@ -354,30 +362,204 @@
 }
 
 .spike-button {
-  background-color: var(--background-color);
-  clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
-  width: 300px;
-  height: 80px; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: "Anton", sans-serif;
-  font-size: 3em;
-  color: var(--background-color-dark);
-  text-decoration: none;
-  transition: transform 0.2s ease;
-  position: relative;
-  z-index: 1;
+    background-color: var(--background-color);
+    clip-path: polygon(20% 0, 80% 0, 100% 0%, 80% 100%, 20% 100%, 0% 0%);
+    width: 350px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    font-size: 3em;
+    color: var(--background-color-dark);
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .spike-button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
+}
+
+.spike-button:active {
+    transform: scale(0.95);
+    opacity: 0.;
 }
 
 /* Spike Buttons Colors */
 
-.spike-aqua-button:hover { background: var(--aqua-primary); }
-.spike-yellow-button:hover { background: var(--yellow-primary); }
-.spike-red-button:hover { background: var(--red-primary); }
-.spike-brand-button:hover { background: var(--brand-burgundy); }
+.spike-aqua-button:hover {
+    background: var(--aqua-primary);
+}
+
+.spike-yellow-button:hover {
+    background: var(--yellow-primary);
+}
+
+.spike-red-button:hover {
+    background: var(--red-primary);
+}
+
+.spike-brand-button:hover {
+    background: var(--brand-burgundy);
+}
+
+/* Glitch Buttons */
+
+.glitch-button {
+    display: flex;
+    justify-content: center;
+    font-family: "Anton", sans-serif;
+    color: var(--background-color);
+    border-radius: 2px;
+    font-size: 3.5em;
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+    max-width: 300px;
+    transition: all 0.2s ease;
+    overflow: hidden;
+}
+
+.glitch-button:hover {
+    background: var(--background-color);
+    color: var(--background-color-dark);
+    transform: scale(1.05);
+}
+
+.glitch-button:hover .glitch-text-button {
+    animation: glitch 0.5s infinite;
+}
+
+.glitch-text-button {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.glitch-button:active {
+    transform: scale(0.95);
+}
+
+/* Glitch Button Colors */
+
+.glitch-button-aqua {
+    background: linear-gradient(0deg, var(--aqua-primary), var(--aqua-secondary));
+    color: var(--background-color-dark);
+}
+
+.glitch-button-yellow {
+    background: linear-gradient(0deg, var(--yellow-primary), var(--yellow-secondary));
+    color: var(--background-color-dark);
+}
+
+.glitch-button-red {
+    background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
+    color: var(--background-color-dark);
+}
+
+.glitch-button-brand {
+    background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
+    color: var(--background-color-dark);
+}
+
+/* Glitch Animation */
+
+@keyframes glitch {
+    0% {
+        text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
+        transform: translate(0, 0);
+    }
+
+    20% {
+        text-shadow: -2px -1px var(--red-primary), 2px 1px var(--aqua-primary);
+        transform: translate(1px, -1px);
+    }
+
+    40% {
+        text-shadow: 2px 1px var(--red-primary), -2px -1px var(--aqua-primary);
+        transform: translate(-1px, 1px);
+    }
+
+    60% {
+        text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
+        transform: translate(0, 0);
+    }
+
+    80% {
+        text-shadow: -1px 1px var(--red-primary), 1px -1px var(--aqua-primary);
+        transform: translate(1px, 1px);
+    }
+
+    100% {
+        text-shadow: 1px -1px var(--red-primary), -1px 1px var(--aqua-primary);
+        transform: translate(-1px, -1px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .header-branding h1 {
+        font-size: 5em;
+    }
+
+    .white-title {
+        font-size: 3em;
+    }
+
+    .text-aqua-button {
+        font-size: 3.5em;
+    }
+
+    .text-yellow-button {
+        font-size: 3.5em;
+    }
+
+    .text-red-button {
+        font-size: 3.5em;
+    }
+
+    .text-brand-button {
+        font-size: 3.5em;
+    }
+
+    .spike-button {
+        font-size: 2.5em;
+        width: 200px;
+        height: 60px;
+    }
+
+    .glitch-button {
+        font-size: 2.5em;
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .header-branding h1 {
+        font-size: 3.5em;
+    }
+
+    .white-title {
+        font-size: 2.2em;
+    }
+
+    .text-aqua-button {
+        font-size: 3em;
+    }
+
+    .text-yellow-button {
+        font-size: 3em;
+    }
+
+    .text-red-button {
+        font-size: 3em;
+    }
+
+    .text-brand-button {
+        font-size: 3em;
+    }
+
+}
