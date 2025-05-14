@@ -1,0 +1,383 @@
+/* Color Variables */
+
+:root {
+    --background-color: #E5EAFA;
+    --background-color-dark: #111111;
+
+    --brand-burgundy: #800020;
+    --brand-burgundy-light: #A0002D;
+
+    --yellow-primary: #FFDD3B;
+    --yellow-secondary: #FFE65C;
+
+    --red-primary: #FF3B3B;
+    --red-secondary: #FF5C5C;
+
+    --aqua-primary: #78FECF;
+    --aqua-secondary: #9AFEDB;
+}
+
+/* Branding  Page Styles */
+
+.header-branding {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--brand-burgundy);
+}
+
+.header-branding h1 {
+    font-family: "Oswald", sans-serif;
+    line-height: 1;
+    font-size: 6em;
+    text-align: center;
+    color: var(--background-color);
+}
+
+.header-branding h1::selection {
+    background-color: var(--background-color-dark);
+    color: var(--background-color);
+}
+
+.header-branding span {
+    color: var(--background-color-dark);
+}
+
+.header-branding span::selection {
+    background-color: var(--background-color);
+    color: var(--background-color-dark);
+}
+
+/* Content */
+
+.debug-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.debug {
+    width: 85%;
+    margin-top: 50px;
+}
+
+.debug-presentation h2 {
+    font-size: 6em;
+    font-family: "Anton", sans-serif;
+    font-weight: 500;
+}
+
+.debug {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.debug-presentation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 0;
+}
+
+.debug-presentation p {
+    font-size: 2em;
+    font-family: "Noto Sans", sans-serif;
+    line-height: 1.5;
+    max-width: 1000px;
+    color: var(--background-color);
+}
+
+.debug-presentation::selection {
+    background-color: var(--brand-burgundy);
+    color: var(--background-color-dark);
+}
+
+.white-title {
+    color: var(--background-color);
+    font-size: 5em;
+    font-family: "Anton", sans-serif;
+    text-align: center;
+    font-weight: 500;
+}
+
+.debug-buttons-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Aqua Button */
+
+.text-aqua-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+    border-radius: 10px;
+    font-size: 5em;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0s ease;
+    overflow: visible;
+    /* Permitimos que el cuadrado se vea fuera del botón */
+    position: relative;
+}
+
+.text-aqua-button a {
+    color: var(--background-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.text-aqua-button:hover {
+    transform: translateX(10px);
+}
+
+.text-aqua-button:hover a {
+    color: var(--aqua-primary);
+}
+
+.text-aqua-button:active {
+    opacity: 0.4;
+}
+
+.text-aqua-button a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--background-color);
+    transform: translate(50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.text-aqua-button:hover a::after {
+    opacity: 1;
+    background-color: var(--aqua-primary);
+    transform: translate(50%, -50%) rotate(135deg) scale(1.2);
+}
+
+/* Red Button */
+
+.text-red-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+    border-radius: 10px;
+    font-size: 5em;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0s ease;
+    overflow: visible;
+    position: relative;
+}
+
+.text-red-button a {
+    color: var(--background-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.text-red-button:hover {
+    transform: translateX(10px);
+}
+
+.text-red-button:hover a {
+    color: var(--red-primary);
+}
+
+.text-red-button:active {
+    opacity: 0.4;
+}
+
+.text-red-button a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--background-color);
+    transform: translate(50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.text-red-button:hover a::after {
+    opacity: 1;
+    background-color: var(--red-primary);
+    transform: translate(50%, -50%) rotate(135deg) scale(1.2);
+}
+
+/* Yellow Button */
+
+.text-yellow-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+    border-radius: 10px;
+    font-size: 5em;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0s ease;
+    overflow: visible;
+    position: relative;
+}
+
+.text-yellow-button a {
+    color: var(--background-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.text-yellow-button:hover {
+    transform: translateX(10px);
+}
+
+.text-yellow-button:hover a {
+    color: var(--yellow-primary);
+}
+
+.text-yellow-button:active {
+    opacity: 0.4;
+}
+
+.text-yellow-button a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--background-color);
+    transform: translate(50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.text-yellow-button:hover a::after {
+    opacity: 1;
+    background-color: var(--yellow-primary);
+    transform: translate(50%, -50%) rotate(135deg) scale(1.2);
+}
+
+/* Brand Button */
+
+.text-brand-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Anton", sans-serif;
+    border-radius: 10px;
+    font-size: 5em;
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, color 0.2s ease, opacity 0s ease;
+    overflow: visible;
+    position: relative;
+}
+
+.text-brand-button a {
+    color: var(--background-color);
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.text-brand-button:hover {
+    transform: translateX(10px);
+}
+
+.text-brand-button:hover a {
+    color: var(--brand-burgundy);
+}
+
+.text-brand-button:active {
+    opacity: 0.4;
+}
+
+.text-brand-button a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    width: 16px;
+    height: 16px;
+    background-color: var(--background-color);
+    transform: translate(50%, -50%) rotate(0deg);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.text-brand-button:hover a::after {
+    opacity: 1;
+    background-color: var(--brand-burgundy);
+    transform: translate(50%, -50%) rotate(135deg) scale(1.2);
+}
+
+/* Spike Buttons */
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.spike-button {
+  background-color: var(--background-color);
+  clip-path: polygon(20% 0, 80% 0, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+  width: 300px;
+  height: 80px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-size: 3em;
+  color: var(--background-color-dark);
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.spike-button:hover {
+  transform: scale(1.05);
+}
+
+/* Spike Buttons Colors */
+
+.spike-aqua-button:hover { background: var(--aqua-primary); }
+.spike-yellow-button:hover { background: var(--yellow-primary); }
+.spike-red-button:hover { background: var(--red-primary); }
+.spike-brand-button:hover { background: var(--brand-burgundy); }

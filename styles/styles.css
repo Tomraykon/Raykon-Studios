@@ -74,12 +74,13 @@ nav {
     width: 100%;
     z-index: 9999;
     padding: 20px 40px;
-    background-color: var(--background-color-dark);
+    background-color: rgba(17, 17, 17, 0.98);
 }
 
 .nav-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 40px;
 }
 
@@ -109,6 +110,8 @@ nav {
     display: flex;
     gap: 30px;
     list-style: none;
+    justify-content: center;
+    flex: 1;
 }
 
 .nav-links a {
@@ -126,8 +129,43 @@ nav {
     animation: glitch 0.5s infinite;
 }
 
+.nav-active {
+    text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
+    animation: glitch 0.5s infinite;
+}
+
 .nav-links a:active {
     opacity: 0.5;
+}
+
+.nav-links a.nav-active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    background-color: var(--background-color);
+    box-shadow: 0 0 5px var(--background-color);
+    transition: width 0.3s ease;
+    width: 100%;
+}
+
+/* Line Under Nav Bar Links */
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--background-color);
+    box-shadow: 0 0 5px var(--background-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Line Under Nav Bar Links */
@@ -168,6 +206,7 @@ header img {
 
 /* Section Presentation */
 
+/* Black Braground */
 .section-container {
     display: flex;
     justify-content: center;
@@ -184,32 +223,81 @@ header img {
     background-color: var(--background-color-dark);
 }
 
+/* White Background */
 .section-white {
-    align-items:flex-start;
+    align-items: flex-start;
     background-color: var(--background-color);
+}
+
+/* Burgundy Background */
+.section-branding {
+    background-color: var(--brand-burgundy);
+}
+
+/* Light Burgundy Background */
+.section-branding-light {
+    background-color: var(--brand-burgundy-light);
+}
+
+/* Aqua Background */
+.section-aqua {
+    background-color: var(--aqua-primary);
+}
+
+/* Red Background */
+.section-red {
+    background-color: var(--red-primary);
+}
+
+/* Brand Gradient Background */
+.gradient-section-branding {
+    background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
+}
+
+/* Red Gradient Background */
+.gradient-section-red {
+    background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
+}
+
+/* Aqua Gradient Background */
+.gradient-section-aqua {
+    background: linear-gradient(0deg, var(--aqua-primary), var(--aqua-secondary));
 }
 
 .presentation {
     align-items: center;
 }
 
-.left-text, .right-text {
+.left-text,
+.right-text {
     width: 40%;
 }
 
-.left-text h2, .right-text h2 {
+.left-text h2,
+.right-text h2 {
     font-size: 3.5em;
     font-family: "Anton", sans-serif;
     font-weight: 500;
     text-align: center;
 }
 
-.left-text p, .right-text p {
+.left-text p,
+.right-text p {
     font-size: 2em;
     font-family: "Noto Sans", sans-serif;
     color: var(--background-color);
     text-align: center;
     line-height: 1.5;
+}
+
+.right-text::selection {
+    background-color: var(--red-primary);
+    color: var(--background-color-dark);
+}
+
+.left-text::selection {
+    background-color: var(--aqua-primary);
+    color: var(--background-color-dark);
 }
 
 /* Raykon News Section */
@@ -224,6 +312,11 @@ header img {
     font-family: "Anton", sans-serif;
     font-weight: 500;
     text-align: left;
+}
+
+.raykon-news h2::selection {
+    background-color: var(--background-color-dark);
+    color: var(--background-color);
 }
 
 /* News Cards */
@@ -294,6 +387,21 @@ header img {
     transition: all 0.6s ease;
 }
 
+.news-card span {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1em;
+    line-height: 0.8;
+    color: var(--background-color);
+    opacity: 0.4;
+    margin-top: -7px;
+    margin-left: 15px;
+}
+
+.news-card:hover span {
+    color: var(--background-color-dark);
+    opacity: 0.7;
+}
+
 /* Explore More section */
 
 .white-card {
@@ -305,6 +413,16 @@ header img {
     background-color: var(--background-color-dark);
     color: var(--background-color);
     border-color: var(--aqua-primary);
+}
+
+.white-card span {
+    color: var(--background-color-dark);
+    opacity: 0.7;
+}
+
+.white-card:hover span {
+    color: var(--background-color);
+    opacity: 0.4;
 }
 
 .explore-more {
@@ -320,16 +438,9 @@ header img {
     text-align: right;
 }
 
-.explore-more h3 {
-    font-family: "Oswald", sans-serif;
-    font-size: 1.9em;
-    margin-bottom: 10px;
-}
-
-.explore-more p {
-    font-family: "Noto Sans", sans-serif;
-    font-size: 1.3em;
-    margin-bottom: 20px;
+.explore-more h2::selection {
+    background-color: var(--background-color);
+    color: var(--background-color-dark);
 }
 
 /* Button Styles */
@@ -383,12 +494,12 @@ header img {
         text-shadow: 1px 0 var(--red-primary), -1px 0 var(--aqua-primary);
         transform: translate(0, 0);
     }
-    
+
     20% {
         text-shadow: -2px -1px var(--red-primary), 2px 1px var(--aqua-primary);
         transform: translate(1px, -1px);
     }
-    
+
     40% {
         text-shadow: 2px 1px var(--red-primary), -2px -1px var(--aqua-primary);
         transform: translate(-1px, 1px);
@@ -426,10 +537,24 @@ footer {
 
 /* Responsive Media Queries */
 
+@media screen and (max-width: 1658px) {
+
+    .section-container {
+        height: 1060px;
+    }
+
+}
+
+@media screen and (max-width: 1094px) {
+    .section-container {
+        height: auto;
+    }
+}
+
 @media screen and (max-width: 1482px) {
     .cards {
         margin-bottom: 60px;
-    }    
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -444,25 +569,28 @@ footer {
     }
 
     header {
-       margin-top: 70px;
+        margin-top: 70px;
     }
 
     .logo {
         height: 40px;
     }
 
-    .left-text, .right-text {
+    .left-text,
+    .right-text {
         width: 70%;
         max-width: 400px;
         margin-top: 25px;
         margin-bottom: 25px;
     }
 
-    .left-text h2, .right-text h2 {
+    .left-text h2,
+    .right-text h2 {
         font-size: 2.5em;
     }
 
-    .left-text p, .right-text p {
+    .left-text p,
+    .right-text p {
         font-size: 1.2em;
     }
 
@@ -511,7 +639,7 @@ footer {
     .cards p {
         font-size: 1.1em;
     }
-    
+
 }
 
 @media screen and (max-width: 450px) {
@@ -520,11 +648,13 @@ footer {
         max-height: 250px;
     }
 
-    .left-text h2, .right-text h2 {
+    .left-text h2,
+    .right-text h2 {
         font-size: 2.5em;
     }
 
-    .left-text p, .right-text p {
+    .left-text p,
+    .right-text p {
         font-size: 1em;
     }
 
