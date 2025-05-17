@@ -14,7 +14,7 @@
     --red-secondary: #FF5C5C;
 
     --aqua-primary: #78FECF;
-    --aqua-secondary: #9AFEDB;
+    --aqua-secondary: #BBFFE5;
 }
 
 /* Branding  Page Styles */
@@ -132,7 +132,6 @@
     text-decoration: none;
     transition: transform 0.2s ease, color 0.2s ease, opacity 0s ease;
     overflow: visible;
-    /* Permitimos que el cuadrado se vea fuera del botón */
     position: relative;
 }
 
@@ -498,10 +497,16 @@
     }
 }
 
+/* Media Quewries */
+
 @media screen and (max-width: 800px) {
 
     .header-branding h1 {
         font-size: 5em;
+    }
+
+    .text-buttons-container {
+        margin-left: 80px;
     }
 
     .white-title {
@@ -540,6 +545,10 @@
 
     .header-branding h1 {
         font-size: 3.5em;
+    }
+
+    .text-buttons-container {
+        margin-left: 80px;
     }
 
     .white-title {

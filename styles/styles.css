@@ -14,7 +14,7 @@
     --red-secondary: #FF5C5C;
 
     --aqua-primary: #78FECF;
-    --aqua-secondary: #9AFEDB;
+    --aqua-secondary: #BBFFE5;
 }
 
 /* Gradients */
@@ -641,6 +641,11 @@ footer {
 
     .cards p {
         font-size: 1.1em;
+    }
+
+    .news-card span {
+        font-size: 0.9em;
+        margin-bottom: 10px;
     }
 
 }
