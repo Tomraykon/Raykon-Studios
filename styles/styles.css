@@ -3,6 +3,7 @@
 :root {
     --background-color: #E5EAFA;
     --background-color-dark: #111111;
+    --background-color-dark-light: #222222;
 
     --brand-burgundy: #800020;
     --brand-burgundy-light: #A0002D;
@@ -17,11 +18,21 @@
     --aqua-secondary: #BBFFE5;
 }
 
-/* Gradients */
+/* Fonts */
 
-.gradient-red {
-    background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
+.font-1 {
+    font-family: "Oswald", sans-serif;
 }
+
+.font-2 {
+    font-family: "Anton", sans-serif;
+}
+
+.font-3 {
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* Gradients */
 
 .gradient-red-font {
     background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
@@ -29,18 +40,16 @@
     -webkit-text-fill-color: transparent;
 }
 
-.gradient-aqua {
-    background: linear-gradient(0deg, var(--aqua-primary), var(--aqua-secondary));
-}
-
 .gradient-aqua-font {
-    background: linear-gradient(90deg, var(--aqua-primary), var(--aqua-secondary));
+    background: linear-gradient(0deg, var(--aqua-primary), var(--aqua-secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.gradient-brand {
-    background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
+.gradient-yellow-font {
+    background: linear-gradient(0deg, var(--yellow-primary), var(--yellow-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .gradient-brand-font {
@@ -77,7 +86,7 @@ nav {
     width: 100%;
     z-index: 9999;
     padding: 20px 40px;
-    background-color: rgba(17, 17, 17, 0.98);
+    background-color: rgba(17, 17, 17, 0.95);
 }
 
 .nav-container {
@@ -191,7 +200,7 @@ nav {
 
 /* Header */
 
-header {
+.header {
     max-width: 1750px;
     height: 650px;
     background-color: var(--background-color);
@@ -202,7 +211,7 @@ header {
     margin-top: 94px;
 }
 
-header img {
+.header img {
     max-height: 500px;
     object-fit: contain;
 }
@@ -252,6 +261,11 @@ header img {
     background-color: var(--red-primary);
 }
 
+/* Yellow Background */
+.section-yellow {
+    background-color: var(--yellow-primary);
+}
+
 /* Brand Gradient Background */
 .gradient-section-branding {
     background: linear-gradient(0deg, var(--brand-burgundy), var(--brand-burgundy-light));
@@ -260,6 +274,12 @@ header img {
 /* Red Gradient Background */
 .gradient-section-red {
     background: linear-gradient(0deg, var(--red-primary), var(--red-secondary));
+}
+
+/* Yellow Gradient Background */
+
+.gradient-section-yellow {
+    background: linear-gradient(0deg, var(--yellow-primary), var(--yellow-secondary));
 }
 
 /* Aqua Gradient Background */
@@ -524,6 +544,38 @@ header img {
     }
 }
 
+/* Selection styles */
+
+.black-selection::selection {
+    background-color: var(--background-color-dark);
+    color: var(--background-color);
+}
+
+.white-selection::selection {
+    background-color: var(--background-color);
+    color: var(--background-color-dark);
+}
+
+.aqua-selection::selection {
+    background-color: var(--aqua-primary);
+    color: var(--background-color-dark);
+}
+
+.yellow-selection::selection {
+    background-color: var(--yellow-primary);
+    color: var(--background-color-dark);
+}
+
+.red-selection::selection {
+    background-color: var(--red-primary);
+    color: var(--background-color-dark);
+}
+
+.brand-selection::selection {
+    background-color:var(--brand-burgundy);
+    color: var(--background-color);
+}
+
 /* Footer */
 
 footer {
@@ -571,7 +623,7 @@ footer {
         font-size: 1em;
     }
 
-    header {
+    .header {
         margin-top: 70px;
     }
 
@@ -597,7 +649,7 @@ footer {
         font-size: 1.2em;
     }
 
-    header img {
+    .header img {
         max-height: 350px;
     }
 
@@ -652,7 +704,11 @@ footer {
 
 @media screen and (max-width: 450px) {
 
-    header img {
+    .nav-links a {
+        font-size: 0.85em;
+    }
+
+    .header img {
         max-height: 250px;
     }
 
