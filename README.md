@@ -18,6 +18,6 @@ Our mission is to craft **games, websites, and designs** with a strong emphasis 
 
 ---
 
-> ⚡ Work on Progress.
+> ⚡ Work in Progress.
 >  
 > — *Raykon Studios™*
